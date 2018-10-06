@@ -10,6 +10,9 @@ let sdl2 = {
 	get app() {
 		return new (require('./lib/app'))
 	},
+	createAppWithFlags(flags) {
+		return new (require('./lib/app'))(flags)
+	},
 	get window() {
 		return require('./lib/window')
 	},
@@ -24,6 +27,9 @@ let sdl2 = {
 	},
 	get keyboard() {
 		return require('./lib/keyboard')
+	},
+	get audio() {
+		return require('./lib/audio')
 	},
 	get font() {
 		return require('sdl2-ttf').class('ttf')

@@ -13,6 +13,39 @@ var SDL_AudioStatus = exports.SDL_AudioStatus = {
 	SDL_AUDIO_PAUSED: 2,
 }
 
+var AUDIO_U8       = 0x0008  /**< Unsigned 8-bit samples */
+var AUDIO_S8       = 0x8008  /**< Signed 8-bit samples */
+var AUDIO_U16LSB   = 0x0010  /**< Unsigned 16-bit samples */
+var AUDIO_S16LSB   = 0x8010  /**< Signed 16-bit samples */
+var AUDIO_U16MSB   = 0x1010  /**< As above, but big-endian byte order */
+var AUDIO_S16MSB   = 0x9010  /**< As above, but big-endian byte order */
+var AUDIO_U16      = AUDIO_U16LSB
+var AUDIO_S16      = AUDIO_S16LSB
+var AUDIO_S32LSB   = 0x8020  /**< 32-bit integer samples */
+var AUDIO_S32MSB   = 0x9020  /**< As above, but big-endian byte order */
+var AUDIO_S32      = AUDIO_S32LSB
+var AUDIO_F32LSB   = 0x8120  /**< 32-bit floating point samples */
+var AUDIO_F32MSB   = 0x9120  /**< As above, but big-endian byte order */
+var AUDIO_F32      = AUDIO_F32LSB
+
+var SDL_AudioFormatFlag = exports.SDL_AudioFormatFlag = {
+  AUDIO_U8, AUDIO_S8, AUDIO_U16LSB, AUDIO_S16LSB, AUDIO_U16MSB, AUDIO_S16MSB,
+  AUDIO_U16, AUDIO_S16, AUDIO_S32LSB, AUDIO_S32MSB, AUDIO_S32,
+  AUDIO_F32LSB, AUDIO_F32MSB, AUDIO_F32,
+}
+
+var SDL_AUDIO_ALLOW_FREQUENCY_CHANGE  = 0x00000001
+var SDL_AUDIO_ALLOW_FORMAT_CHANGE     = 0x00000002
+var SDL_AUDIO_ALLOW_CHANNELS_CHANGE   = 0x00000004
+var SDL_AUDIO_ALLOW_ANY_CHANGE        = (SDL_AUDIO_ALLOW_FREQUENCY_CHANGE|SDL_AUDIO_ALLOW_FORMAT_CHANGE|SDL_AUDIO_ALLOW_CHANNELS_CHANGE)
+
+var SDL_AllowChangeFlags = exports.SDL_AllowChangeFlags = {
+  SDL_AUDIO_ALLOW_FREQUENCY_CHANGE,
+  SDL_AUDIO_ALLOW_FORMAT_CHANGE,
+  SDL_AUDIO_ALLOW_CHANNELS_CHANGE,
+  SDL_AUDIO_ALLOW_ANY_CHANGE,
+}
+
 var voit = exports.voit = ref.types.void
 var ushort = exports.ushort = ref.types.ushort
 var SDL_AudioFormat = exports.SDL_AudioFormat = ushort
