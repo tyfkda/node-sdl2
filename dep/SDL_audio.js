@@ -8,9 +8,9 @@ var SDL_stdinc_lib = require('./SDL_stdinc')
 var SDL_rwops_lib = require('./SDL_rwops')
 
 var SDL_AudioStatus = exports.SDL_AudioStatus = {
-	SDL_AUDIO_STOPPED: 0,
-	SDL_AUDIO_PLAYING: 1,
-	SDL_AUDIO_PAUSED: 2,
+  SDL_AUDIO_STOPPED: 0,
+  SDL_AUDIO_PLAYING: 1,
+  SDL_AUDIO_PAUSED: 2,
 }
 
 var AUDIO_U8       = 0x0008  /**< Unsigned 8-bit samples */
