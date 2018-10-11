@@ -2,14 +2,19 @@
 
 const NS = require('../index')
 const SDL = NS.require('SDL')
+const SDL_render = NS.require('SDL_render')
+const SDL_pixels = NS.require('SDL_pixels')
 
 // Test app begin
 const App = NS.createAppWithFlags(SDL.SDL_InitFlags.SDL_INIT_EVERYTHING)
 
 // Test window begin
 const Window = NS.window
-const win = new Window
-win.title = 'Play sine wave'
+const win = new Window({
+  title: 'Play sine wave',
+  w: 256 * 2,
+  h: 256 * 2,
+})
 win.on('close', function() {
   App.quit()
 })
@@ -42,3 +47,31 @@ audio.openAudioDevice(options, (arrayBuffer) => {
   }
   counter = c
 })
+
+// Texture
+const WIDTH = 256, HEIGHT = 256
+const texture = win.render.createTexture(
+  WIDTH, HEIGHT, SDL_pixels.PixelFormat.ABGR8888, SDL_render.SDL_TextureAccess.SDL_TEXTUREACCESS_STREAMING)
+const pixels = new Uint8Array(WIDTH * HEIGHT * 4)
+const pitch = WIDTH * 4
+
+// Loop
+let count = 0
+setInterval(() => {
+  if (++count >= 256)
+    count = 0
+  for (let i = 0; i < HEIGHT; ++i) {
+    for (let j = 0; j < WIDTH; ++j) {
+      const index = (i * WIDTH + j) * 4
+      pixels[index]     = j
+      pixels[index + 1] = i
+      pixels[index + 2] = count
+      pixels[index + 3] = 255
+    }
+  }
+
+  texture.update(null, pixels, pitch)
+  win.render.copy(texture, null, null)
+
+  win.render.present()
+}, 1000 / 100)

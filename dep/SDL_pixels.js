@@ -6,19 +6,51 @@ var ref = require('ref')
 
 var SDL_stdinc_lib = require('./SDL_stdinc')
 
-var c_SDL_pixels_h_Ea = exports.c_SDL_pixels_h_Ea = {
-	SDL_PIXELTYPE_UNKNOWN: 0,
-	SDL_PIXELTYPE_INDEX1: 1,
-	SDL_PIXELTYPE_INDEX4: 2,
-	SDL_PIXELTYPE_INDEX8: 3,
-	SDL_PIXELTYPE_PACKED8: 4,
-	SDL_PIXELTYPE_PACKED16: 5,
-	SDL_PIXELTYPE_PACKED32: 6,
-	SDL_PIXELTYPE_ARRAYU8: 7,
-	SDL_PIXELTYPE_ARRAYU16: 8,
-	SDL_PIXELTYPE_ARRAYU32: 9,
-	SDL_PIXELTYPE_ARRAYF16: 10,
-	SDL_PIXELTYPE_ARRAYF32: 11,
+var PixelType = exports.PixelType = {
+	UNKNOWN: 0,
+	INDEX1: 1,
+	INDEX4: 2,
+	INDEX8: 3,
+	PACKED8: 4,
+	PACKED16: 5,
+	PACKED32: 6,
+	ARRAYU8: 7,
+	ARRAYU16: 8,
+	ARRAYU32: 9,
+	ARRAYF16: 10,
+	ARRAYF32: 11,
+}
+var PackedOrder = exports.PackedOrder = {
+	NONE: 0,
+	XRGB: 1,
+	RGBX: 2,
+	ARGB: 3,
+	RGBA: 4,
+	XBGR: 5,
+	BGRX: 6,
+	ABGR: 7,
+	BGRA: 8,
+}
+var PackedLayout = exports.PackedLayout = {
+	NONE: 0,
+	_332: 1,
+	_4444: 2,
+	_1555: 3,
+	_5551: 4,
+	_565: 5,
+	_8888: 6,
+	_2101010: 7,
+	_1010102: 8,
+}
+
+function SDL_DEFINE_PIXELFORMAT(type, order, layout, bits, bytes) {
+  return ((1 << 28) | ((type) << 24) | ((order) << 20) | ((layout) << 16) |
+          ((bits) << 8) | ((bytes) << 0))
+}
+
+var PixelFormat = exports.PixelFormat = {
+	UNKNOWN: 0,
+	ABGR8888: SDL_DEFINE_PIXELFORMAT(PixelType.PACKED32, PackedOrder.ABGR, PackedLayout._8888, 32, 4),
 }
 var SDL_bool = exports.SDL_bool = {
 	SDL_FALSE: 0,
