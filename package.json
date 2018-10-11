@@ -21,17 +21,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zetsingithub/node-sdl2.git"
+    "url": "https://github.com/tyfkda/node-sdl2.git"
   },
   "keywords": [
     "node",
     "sdl2",
     "binding"
   ],
-  "author": "Zetsin",
+  "author": "tyfkda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zetsingithub/node-sdl2/issues"
+    "url": "https://github.com/tyfkda/node-sdl2/issues"
   },
-  "homepage": "https://github.com/zetsingithub/node-sdl2"
+  "homepage": "https://github.com/tyfkda/node-sdl2"
 }
