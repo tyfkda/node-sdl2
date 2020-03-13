@@ -1,8 +1,8 @@
-var FFI = require('ffi')
+var FFI = require('ffi-napi')
 var ArrayType = require('ref-array')
 var Struct = require('ref-struct')
 var Union = require('ref-union');
-var ref = require('ref')
+var ref = require('ref-napi')
 
 var SDL_keycode_lib = require('./SDL_keycode')
 var SDL_stdinc_lib = require('./SDL_stdinc')
