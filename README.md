@@ -1,6 +1,10 @@
 # node-sdl2
 Bindings for SDL2 in Node
 
+Converted to use NAPI interfaces, tested with Node.js v13
+
+In windows, add `SDL2.dll` to the program directory
+
 ## Installation
 Install with npm:
 ```javascript
