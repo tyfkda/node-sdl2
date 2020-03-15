@@ -6,9 +6,9 @@
   "dependencies": {
     "ffi-napi": "^2.4.7",
     "ref-napi": "^1.4.3",
-    "ref-array": "^1.2.0",
-    "ref-struct": "^1.1.0",
-    "ref-union": "^1.0.1",
+    "ref-array-napi": "^1.2.0",
+    "ref-struct-napi": "^1.1.0",
+    "ref-union-di": "^1.0.1",
     "sdl2-gfx": "^2.0.2",
     "sdl2-image": "^2.0.3",
     "sdl2-ttf": "^2.0.4"
@@ -21,17 +21,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tyfkda/node-sdl2.git"
+    "url": "https://github.com/fador/node-sdl2.git"
   },
   "keywords": [
     "node",
     "sdl2",
     "binding"
   ],
-  "author": "tyfkda",
+  "author": "fador",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tyfkda/node-sdl2/issues"
+    "url": "https://github.com/fador/node-sdl2/issues"
   },
-  "homepage": "https://github.com/tyfkda/node-sdl2"
+  "homepage": "https://github.com/fador/node-sdl2"
 }
