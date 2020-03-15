@@ -1,8 +1,8 @@
 var FFI = require('ffi-napi')
 var ArrayType = require('ref-array-napi')
 var Struct = require('ref-struct-napi')
+var ref = require('ref-napi');
 var Union = require('ref-union-di')(ref);
-var ref = require('ref-napi')
 
 var SDL_touch_lib = require('./SDL_touch')
 var SDL_rwops_lib = require('./SDL_rwops')

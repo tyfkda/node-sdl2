@@ -32,10 +32,12 @@ let sdl2 = {
 		return require('./lib/audio')
 	},
 	get font() {
-		return require('sdl2-ttf').class('ttf')
+		//return require('sdl2-ttf').class('ttf')
+    return null;
 	},
 	get image() {
-		return require('sdl2-image').class('image')
+		//return require('sdl2-image').class('image')
+    return null;
 	},
 }
 

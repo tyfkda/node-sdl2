@@ -1,8 +1,8 @@
 var FFI = require('ffi-napi')
 var ArrayType = require('ref-array-napi')
 var Struct = require('ref-struct-napi')
+var ref = require('ref-napi');
 var Union = require('ref-union-di')(ref);
-var ref = require('ref-napi')
 
 
 var khronos_boolean_enum_t = exports.khronos_boolean_enum_t = {

@@ -8,10 +8,7 @@
     "ref-napi": "^1.4.3",
     "ref-array-napi": "^1.2.0",
     "ref-struct-napi": "^1.1.0",
-    "ref-union-di": "^1.0.1",
-    "sdl2-gfx": "^2.0.2",
-    "sdl2-image": "^2.0.3",
-    "sdl2-ttf": "^2.0.4"
+    "ref-union-di": "^1.0.1"
   },
   "devDependencies": {
     "ffi-gen": "*"
